@@ -407,7 +407,93 @@ def main():
                 ('Biden urged states to pause reopening efforts on March 29 as a top health official warned of "impending doom."', 'slightly changed with errors')
             )
             st.markdown('<br />', unsafe_allow_html=True)
+    elif user == 'larissa.rath':
+        st.markdown('<br />', unsafe_allow_html=True)
+        st.markdown('### Comments')
+        st.markdown('''
+        Significant differences can be found in the ratings for the criteria **factual_correctness**, **syntactic_correctness**, **content_similarity** and **overall_quality**.
 
+
+        ''')
+        col7, col8 = st.columns(2)
+        st.markdown('<br />', unsafe_allow_html=True)
+        with col7:
+            st.markdown('##### Input text')
+            st.write('''
+            Fox Corp chief executive Lachlan Murdoch will return to the United States from a months-long Australian sojourn in early September, a spokesman told Reuters on Wednesday. Murdoch, who also co-chairs publisher News Corp with his father Rupert Murdoch, moved with his family to Sydney last month, joining a host of high profile people who have opted to ride out the coronavirus pandemic in relatively unaffected Australia. Spokesman John Connolly said Murdoch, who is also Fox's executive chairman, would return to Los Angeles in early September to reopen the company's operational head office there "and will go back to working and living in the U.S." Fox last month told its 9,000 staff to return to their U.S. offices from Sept. 7, after working at from home for several months. "As with most CEOs of large companies, he's looking forward to moving from working from home to working from the office," Connolly said, adding that Murdoch would commute regularly to Sydney where his immediate family will remain. While he is in Sydney, Murdoch will work midnight to morning local time, a source familiar with the plans said. Australia and the United States have had vastly different pandemic experiences. While an average of around 69,500 new COVID-19 infections are being reported in the United States each day, Australia has a near zero rate. The surge in U.S. cases led Biden to urge states on March 29 to pause reopening efforts as a top health official warned of "impending doom."
+            ''')
+        with col8:
+            st.markdown('##### Output text')
+            st.write('''
+           Fox Corp chief executive Lachlan Murdoch will return to the United States from early September after a months-long sojourn in Australia, a spokesman told Reuters on Wednesday. Murdoch, who co-chairs publisher News Corp with his father Rupert Murdoch, moved with his family to Sydney last month, joining a number of high profile people who have decided to ride out the coronaviruses in relatively unaffected Australia. Murdoch is the Fox's executive chairman, would return to Los Angeles in early September to reopen the company"s operational head office there, according to spokesman John Connolly. The 9,000 staff were told by Fox to return to their U.S. offices from Sept. 7, after working from home for several months. Murdoch would commute frequently to Sydney, where his family will remain, according to "As with most CEOs of large companies, he's looking forward to moving from working from home to working from the office," Connolly. A source familiar with the plans said that Murdoch would work midnight to morning local time while he was in Sydney. The United States and Australia have had different experiences with the Pandemic. In the United States, around 69,500 new COVID-19 infections are reported each day, but in Australia, there is a near zero rate. Biden urged states to pause reopening efforts on March 29 as a top health official warned of "impending doom."
+            ''')
+        st.markdown('<br />', unsafe_allow_html=True)
+        with st.expander('Text analysis (Output text)'):
+            st.markdown('###### Count criteria')
+            annotated_text(
+                'Fox Corp chief executive Lachlan Murdoch will return to the United States from early September after a months-long sojourn in Australia, a spokesman told Reuters on Wednesday. Murdoch, who co-chairs publisher News Corp with his father Rupert Murdoch, moved with his family to Sydney last month, joining a number of high profile people who have decided to ride out the ',
+                ('coronaviruses', 'GR LC'),
+                'in relatively unaffected Australia. Murdoch is ',
+                ('the Fox\'s executive chairman', 'GR'), 
+                'would return to Los Angeles in early September to reopen the ',
+                ('company"s', 'GR'), 
+                'operational head office there, according to spokesman John Connolly.',
+                util.annotation('("and will go back to working and living in the U.S.")', 'EI', border="1px dashed red"),
+                'The 9,000 staff were told by Fox to return to their U.S. offices from Sept. 7, after working from home for several months. Murdoch would commute frequently to Sydney, where his family will remain, according to ',
+                ('"As with most CEOs of large companies, he\'s looking forward to moving from working from home to working from the office," Connolly.','GR SY'), 
+                'A source familiar with the plans said that Murdoch would work midnight to morning local time while he was in Sydney. The United States and Australia have had different experiences with',
+                ('the Pandemic.', 'GR'), 
+                'In the United States, around 69,500 new COVID-19 infections are reported each day, but in Australia, there is a near zero rate. ',
+                util.annotation('(The surge in U.S. cases led)', 'EI', border="1px dashed red"), 
+                'Biden urged states to pause reopening efforts on March 29 as a top health official warned of "impending doom."'
+            )
+            st.markdown('<br />', unsafe_allow_html=True)
+            st.markdown('###### Likert criteria')
+            annotated_text(
+                ('Fox Corp chief executive Lachlan Murdoch will return to the United States from early September after a months-long sojourn in Australia, a spokesman told Reuters on Wednesday. ', 'slightly changed'),
+                ('Murdoch, who co-chairs publisher News Corp with his father Rupert Murdoch, moved with his family to Sydney last month, joining a number of high profile people who have decided to ride out the coronaviruses in relatively unaffected Australia. ', 'slightly changed'),
+                ('Murdoch is the Fox\'s executive chairman, would return to Los Angeles in early September to reopen the company"s operational head office there, according to spokesman John Connolly. ', 'changed with errors'),
+                ('The 9,000 staff were told by Fox to return to their U.S. offices from Sept. 7, after working from home for several months.', 'slightly changed'),
+                ('Murdoch would commute frequently to Sydney, where his family will remain, according to "As with most CEOs of large companies, he\'s looking forward to moving from working from home to working from the office," Connolly.', 'changed with errors'),
+                ('A source familiar with the plans said that Murdoch would work midnight to morning local time while he was in Sydney.', 'slightly changed'),
+                ('The United States and Australia have had different experiences with the Pandemic.', 'changed with errors'),
+                ('In the United States, around 69,500 new COVID-19 infections are reported each day, but in Australia, there is a near zero rate.', 'changed'),
+                ('Biden urged states to pause reopening efforts on March 29 as a top health official warned of "impending doom."', 'slightly changed with errors')
+            )
+            st.markdown('<br />', unsafe_allow_html=True)
+        col9, col10 = st.columns(2)
+        st.markdown('<br />', unsafe_allow_html=True)
+        with col9:
+            st.markdown('##### Input text')
+            st.write('''
+                Russia will limit exports of nitrogen fertilisers and complex nitrogen-containing fertilisers for six months to try to curb any further increase in food prices amid higher gas prices, Prime Minister Mikhail Mishustin said on Wednesday. "The increase in natural gas prices has had a negative impact on the global markets," Mishustin told a government meeting. "This could lead to higher prices and shortages of nitrogen fertilisers, in the production of which the price of gas occupies a significant part, and, as a consequence, cause an increase in the cost of food products. To prevent this, the government is imposing temporary restrictions on the exports," he added. The quota for exports of nitrogen fertilisers will be set at 5.9 million tonnes, and for complex nitrogen-containing fertilisers at 5.35 million tonnes, he said.
+                ''')
+        with col10:
+            st.markdown('##### Output text')
+            st.write('''
+                Prime Minister Mikhail Mishustin said on Wednesday that Russia would limit exports of nitrogen fertilisers and complex nitrogen-containing fertilisers for the six months to try to curb any further increase in food prices due to higher gas prices. "The increase in natural gas prices has had a negative impact on the global markets," Mishustin told a government meeting. "This could lead to higher prices and shortages of nitrogen fertilisers, in the production of which the price of gas occupies a significant part, and, as a consequence, cause an increase in the cost of food products. To prevent this, the government is imposing temporary restrictions on the exports," he added. He said that the quota for nitrogen fertilisers would be set at 5.9 million tonnes and complex nitrogen-containing fertilisers at 5.35 tonnes.
+                ''')
+        st.markdown('<br />', unsafe_allow_html=True)
+        with st.expander('Text analysis'):
+            annotated_text(
+                'Prime Minister Mikhail Mishustin said on Wednesday that Russia would limit exports of nitrogen fertilisers and complex nitrogen-containing fertilisers for ',
+                ('the six months', 'GR'),
+                ' to try to curb any further increase in food prices ',
+                ('due to higher gas prices. ', 'LC'),
+                '"The increase in natural gas prices has had a negative impact on the global markets," Mishustin told a government meeting. "This could lead to higher prices and shortages of nitrogen fertilisers, in the production of which the price of gas occupies a significant part, and, as a consequence, cause an increase in the cost of food products. To prevent this, the government is imposing temporary restrictions on the exports," he added.',
+                ('He said that the quota for nitrogen fertilisers', 'EI'),
+                'would be set at 5.9 million tonnes and complex nitrogen-containing fertilisers at ',
+                ('5.35 tonnes.', 'EI')
+            )
+            st.markdown('<br />', unsafe_allow_html=True)
+            annotated_text(
+                ('Prime Minister Mikhail Mishustin said on Wednesday that Russia would limit exports of nitrogen fertilisers and complex nitrogen-containing fertilisers for the six months to try to curb any further increase in food prices due to higher gas prices.', 'changed'),
+                ('"The increase in natural gas prices has had a negative impact on the global markets," Mishustin told a government meeting.', 'unchanged'),
+                ('"This could lead to higher prices and shortages of nitrogen fertilisers, in the production of which the price of gas occupies a significant part, and, as a consequence, cause an increase in the cost of food products.', 'unchanged'),
+                ('"To prevent this, the government is imposing temporary restrictions on the exports," he added.', 'unchanged'),
+                ('He said that the quota for nitrogen fertilisers would be set at 5.9 million tonnes and complex nitrogen-containing fertilisers at 5.35 tonnes.', 'changed')
+            )
+            st.markdown('<br />', unsafe_allow_html=True)
 
 
 if __name__ == '__main__':
