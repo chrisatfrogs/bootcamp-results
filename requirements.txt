@@ -1,4 +1,7 @@
 numpy
 pandas
+scipy
+matplotlib
+plotly
 streamlit
 st-annotated-text
